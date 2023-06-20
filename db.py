@@ -1,5 +1,6 @@
 import pymysql
 
+
 def init_db():
     connect = None
     try:
@@ -27,6 +28,7 @@ def init_db():
             connect.rollback()
         print("数据库异常，数据表生成失败: ", e)
         exit(1)
+        
     finally:
         if connect:
             connect.close()

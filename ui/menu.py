@@ -1,15 +1,13 @@
 import questionary
-
-def show_test():
-    print("执行show_test")
-
+from ui.clear_console import clear
+from service.add import add_user
 
 menu_options = {
-    "test1":show_test,
-    "test2":show_test,
+    "添加用户":add_user,
 }
 
 def show_menu():
     selected = questionary.select("请选择对应的功能",menu_options).ask()
+    clear()
     menu_options.get(selected)()
 
